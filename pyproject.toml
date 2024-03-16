@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "transcribe-api"
+version = "0.1.0"
+description = "Transcribe api to expose transcribe lib as restapi service"
+authors = ["vitostamatti <vitostamatti@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.110.0"
+uvicorn = { extras = ["standard"], version = "^0.28.0" }
+python-multipart = "^0.0.9"
+transcribe = { git = "https://github.com/vitostamatti/transcribe-lib" }
+pydantic-settings = "^2.2.1"
+gunicorn = "^21.2.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

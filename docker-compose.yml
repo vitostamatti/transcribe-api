@@ -1,0 +1,21 @@
+version: "3.4"
+
+services:
+  transcribe-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    environment:
+      - PYANNOTE_CACHE=/root/.cache/
+      - HF_HOME=/root/.cache/
+    ports:
+      - "9000:9000"
+    volumes:
+      # - ./app:/app/app
+      # - cache-pip:/root/.cache/pip
+      # - cache-poetry:/root/.cache/poetry
+      - cache:/root/.cache/
+volumes:
+  cache:
